@@ -1,5 +1,20 @@
 # Read the data into RStudio (or R) using the read.csv R command
+#MELEK KURU
+
+# Check and install required packages
+required_packages <- c("ggplot2", "MASS", "xtable", "cluster", "factoextra")
+
+for (pkg in required_packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg)
+  }
+  library(pkg, character.only = TRUE)
+}
+
+
+
 InitialData<-read.csv(file="gene-expression-invasive-vs-noninvasive-cancer.csv")
+head(InitialData)
 
 # Check using the str, dim and dimnames command it worked - parts of the
 #generated output are added as comments; lines starting 
@@ -465,4 +480,33 @@ youden_index <- sensitivity+specificity-1;youden_index
 #for accurate prediction of cancer types, as evidenced by the relatively low sensitivity and specificity and 
 #the nonsignificant association revealed by Fisher's Exact test.
 
+
+# Save scatter plot
+png("results/scatter_plot.png") # Specify the results directory
+pairs(mynewdata[, c(1:10)]) # Your scatter plot code
+dev.off()
+
+# Save Q-Q plots
+png("results/qq_plots.png")
+par(mfrow = c(2, 2))
+for (gene in names(mynewdata)) {
+  qqnorm(mynewdata[[gene]], main = gene)
+  qqline(mynewdata[[gene]])
+}
+dev.off()
+
+# Save PCA plot
+png("results/pca_plot.png")
+plot(pc1, pc2, col = my_class_subset$type_of_cancer, pch = 16,
+     main = "PCA Plot of PC1 vs PC2",
+     xlab = "Principal Component 1", ylab = "Principal Component 2", cex = 1.2)
+legend("topright", legend = levels(my_class_subset$type_of_cancer),
+       col = 1:2, pch = 16, title = "Class")
+dev.off()
+
+
+png("results/boxplot_type_of_cancer.png")
+boxplot(thedata ~ type_of_cancer, data = my_class_subset, 
+        main = "Type Of Cancer", col = c("blue", "red"))
+dev.off()
 
