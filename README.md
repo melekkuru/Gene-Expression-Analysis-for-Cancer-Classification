@@ -73,24 +73,27 @@ Check the `results/` folder for:
 
 ---
 
-## Key Analyses
+### Key Analyses
+1. **Statistical Exploration**
+   - Computation of **variance**, **covariance**, and **correlation matrices** for 10 randomly selected genes.
+   - Visualization of relationships and distributions using **scatter plots** and **Q-Q plots**.
 
-### 1. Statistical Exploration
-- Variance, covariance, and correlation matrices of 10 randomly selected genes.
-- Scatter plots and Q-Q plots to visualize relationships and distributions.
+2. **Principal Component Analysis (PCA)**
+   - Generation of **scree plots** to analyze explained variance.
+   - **Scatter plots** for the first two principal components to identify patterns and clusters.
+   - Analysis of **explained variance** and **feature contributions** for dimensionality reduction.
 
-### 2. Principal Component Analysis (PCA)
-- Scree plots and scatter plots of the first two principal components.
-- Explained variance and feature contributions.
+3. **Classification Models**
+   - **Linear Discriminant Analysis (LDA)**:
+     - Linear separation between invasive and non-invasive cancer classes.
+     - Evaluation of performance with **confusion matrix**, **sensitivity**, **specificity**, and **misclassification error**.
+   - **Quadratic Discriminant Analysis (QDA)**:
+     - Quadratic decision boundaries for non-linear separations.
+     - Similar performance evaluation as LDA.
 
-### 3. Classification Models
-- **LDA**: Linear separation of invasive vs. non-invasive cancer.
-- **QDA**: Quadratic separation for non-linear boundaries.
-- Performance evaluation using confusion matrix, sensitivity, specificity, and misclassification error.
-
-### 4. Fisher’s Exact Test
-- Statistical association between PCA-based predictions and true cancer classes.
-
+4. **Fisher’s Exact Test**
+   - Statistical test to evaluate the **association** between PCA-based predictions and true cancer classes.
+   - Calculation of metrics such as **sensitivity**, **specificity**, and **Youden index** to assess the classification's effectiveness.
 ---
 
 ## Requirements
