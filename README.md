@@ -28,13 +28,20 @@ Gene Expression Analysis for Cancer Classification/
 │   ├── covariance_matrix.csv                                 # Covariance matrix
 │   ├── correlation_matrix.csv                                # Correlation matrix
 │   ├── distance_matrix.csv                                   # Distance matrix
-│   ├── pca_plots/                                            # PCA-related plots
-│   └── lda_qda_plots/                                        # LDA and QDA results
-├── .RData                                                   # Saved R environment
+│   ├── pca_plot.png                                          # PCA component plot
+│   ├── pca_scatter_plot.png                                  # PCA scatter plot for observations
+│   ├── pca_scores.csv                                        # PCA scores table
+│   ├── scatter_plot.png                                      # Scatter plot for random genes
+│   ├── boxplot_type_of_cancer.png                            # Boxplot for cancer types
+│   ├── lda_plot.png                                          # LDA plot
+│   ├── qq_plots/                                             # Q-Q plots folder
+│   │   └── qq_plots.png                                      # Q-Q plots for individual genes
+└── .RData                                                   # Saved R environment
 ├── .Rhistory                                                # R console history
 ├── Gene Expression Analysis for Cancer Classification.R     # Main analysis script
 ├── requirements.R                                           # R script for required packages
 └── README.md                                                # Project instructions
+
 ```
 
 ---
